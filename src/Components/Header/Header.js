@@ -26,17 +26,25 @@ const MyTab = styled(Tab)({
 
 const Header = () => {
   const [value, setValue] = useState("home");
-  const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorProfileEl, setAnchorProfileEl] = useState(null);
+  const [anchorAboutUsEl, setAnchorAboutUsEl] = useState(null);
 
   const handleTabChange = (event, newValue) => {
     setValue(newValue);
   };
 
-  const handelOpenMenu = (e) => {
-    setAnchorEl(e.currentTarget);
+  const handelOpenProfileMenu = (e) => {
+    setAnchorProfileEl(e.currentTarget);
   };
-  const handelCloseMenu = (e) => {
-    setAnchorEl(null);
+  const handelCloseProfileMenu = (e) => {
+    setAnchorProfileEl(null);
+  };
+
+  const handelOpenAboutUsMenu = (e) => {
+    setAnchorAboutUsEl(e.currentTarget);
+  };
+  const handelCloseAboutUsMenu = (e) => {
+    setAnchorAboutUsEl(null);
   };
 
   return (
@@ -52,7 +60,21 @@ const Header = () => {
 
             <MyTab label={"خانه"} value="home"></MyTab>
             <MyTab label={"خدمات ما"} value="services"></MyTab>
-            <MyTab label={"درباره ما"} value="aboutUs"></MyTab>
+            <Button
+              color="white"
+              sx={{ fontSize: 18 }}
+              onClick={handelOpenAboutUsMenu}
+              size="large"
+              endIcon={
+                anchorAboutUsEl ? (
+                  <ArrowDropUpOutlinedIcon sx={{ marginRight: 1 }} />
+                ) : (
+                  <ArrowDropDownOutlinedIcon sx={{ marginRight: 1 }} />
+                )
+              }
+            >
+              درباره ما
+            </Button>
           </Tabs>
           <Box
             sx={{
@@ -71,10 +93,10 @@ const Header = () => {
             <Button
               color="white"
               sx={{ fontSize: 18 }}
-              onClick={handelOpenMenu}
+              onClick={handelOpenProfileMenu}
               size="large"
               endIcon={
-                anchorEl ? (
+                anchorProfileEl ? (
                   <ArrowDropUpOutlinedIcon sx={{ marginRight: 1 }} />
                 ) : (
                   <ArrowDropDownOutlinedIcon sx={{ marginRight: 1 }} />
@@ -84,23 +106,34 @@ const Header = () => {
               حساب کاربری
             </Button>
             <Menu
-              id="menu-appbar"
-              open={Boolean(anchorEl)}
-              onClose={handelCloseMenu}
-              anchorEl={anchorEl}
-              // anchorOrigin={{
-              //   vertical: "bottom",
-              //   horizontal: "left",
-              // }}
+              id="profile-menu-appbar"
+              open={Boolean(anchorProfileEl)}
+              onClose={handelCloseProfileMenu}
+              anchorEl={anchorProfileEl}
+              sx={{
+                "*": { fontSize: 15 },
+              }}
               keepMounted
-              // transformOrigin={{
-              //   vertical: "down",
-              //   horizontal: "left",
-              // }}
             >
               <MenuItem>مشاهده حساب کاربری</MenuItem>
               <MenuItem>سفارشات</MenuItem>
               <MenuItem>خروج</MenuItem>
+            </Menu>
+            <Menu
+              id="about-us-menu-appbar"
+              open={Boolean(anchorAboutUsEl)}
+              onClose={handelCloseAboutUsMenu}
+              anchorEl={anchorAboutUsEl}
+              sx={{
+                "*": { fontSize: 15 },
+              }}
+              keepMounted
+            >
+              <MenuItem>درباره لایسنس مارکت</MenuItem>
+              <MenuItem>نظرسنجی و بهبود خدمات</MenuItem>
+              <MenuItem>قوانین</MenuItem>
+              <MenuItem>ارتباط با ما</MenuItem>
+              <MenuItem>همکاری با ما</MenuItem>
             </Menu>
           </Box>
         </Toolbar>
