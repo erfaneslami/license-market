@@ -2,13 +2,13 @@ import { AppBar, Avatar, Container, Tab, Tabs, Toolbar } from "@mui/material";
 import logo from "../../Assets/logo.png";
 const Header = () => {
   return (
-    <AppBar color="secondary">
-      <Container maxWidth="lg" color="secondary">
+    <AppBar>
+      <Container maxWidth="lg">
         <Toolbar disableGutters sx={{ padding: 3 }}>
           <Tabs>
             <Avatar
               src={logo}
-              sx={{ cursor: "pointer" }}
+              sx={{ cursor: "pointer", width: 70, height: 70 }}
               variant="square"
             ></Avatar>
 
