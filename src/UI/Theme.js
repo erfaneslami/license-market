@@ -8,6 +8,9 @@ const Theme = createTheme({
       white: "#EDF2F4",
       gray: "#8D99AE",
     },
+    white: {
+      main: "#EDF2F4",
+    },
     primary: {
       main: "#2B2D42",
       contrastText: "#EDF2F4",
@@ -22,6 +25,10 @@ const Theme = createTheme({
   },
   typography: {
     fontFamily: IranSansWeb,
+  },
+  tabs: {
+    fontSize: "1.8rem",
+    m: 2,
   },
 });
 
