@@ -1,8 +1,8 @@
-import logo from "./logo.svg";
 import "./App.sass";
+import Header from "./Components/Header/Header";
 
 function App() {
-  return;
+  return <Header />;
 }
 
 export default App;
