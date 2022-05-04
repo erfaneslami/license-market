@@ -3,7 +3,7 @@ import logo from "../../Assets/logo.png";
 const Header = () => {
   return (
     <AppBar color="secondary">
-      <Container maxWidth="md" color="secondary">
+      <Container maxWidth="lg" color="secondary">
         <Toolbar disableGutters sx={{ padding: 3 }}>
           <Tabs>
             <Avatar
