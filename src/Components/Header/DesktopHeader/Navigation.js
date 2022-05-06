@@ -1,21 +1,13 @@
-import {
-  Avatar,
-  Button,
-  Menu,
-  MenuItem,
-  styled,
-  Tab,
-  Tabs,
-} from "@mui/material";
+import { Box, Button, Menu, MenuItem, styled, Tab, Tabs } from "@mui/material";
 import ArrowDropDownOutlinedIcon from "@mui/icons-material/ArrowDropDownOutlined";
 import ArrowDropUpOutlinedIcon from "@mui/icons-material/ArrowDropUpOutlined";
 import { useState } from "react";
-import logo from "../../Assets/logo.png";
+import logo from "../../../Assets/logo.png";
 
-const MyTab = styled(Tab)({
+const MyTab = styled(Tab)((theme) => ({
   fontSize: "1.8rem",
   margin: 10,
-});
+}));
 
 const Navigation = () => {
   const [value, setValue] = useState("home");
@@ -33,18 +25,31 @@ const Navigation = () => {
   };
 
   return (
-    <Tabs value={value} textColor="secondary" onChange={handleTabChange}>
-      <Avatar
-        src={logo}
-        sx={{ cursor: "pointer", width: 70, height: 70 }}
-        variant="square"
-      ></Avatar>
-
+    <Tabs
+      value={value}
+      textColor="secondary"
+      onChange={handleTabChange}
+      sx={{ display: "flex", alignItems: "center" }}
+    >
+      <Box
+        sx={{
+          height: 70,
+        }}
+      >
+        <img
+          src={logo}
+          alt="license-market logo"
+          style={{
+            height: "100%",
+            width: "100%",
+          }}
+        />
+      </Box>
       <MyTab label={"خانه"} value="home"></MyTab>
       <MyTab label={"خدمات ما"} value="services"></MyTab>
       <Button
         color="white"
-        sx={{ fontSize: 18 }}
+        sx={{ fontSize: 18, display: "flex" }}
         onClick={handelOpenAboutUsMenu}
         size="large"
         endIcon={
@@ -57,6 +62,7 @@ const Navigation = () => {
       >
         درباره ما
       </Button>
+
       <Menu
         id="about-us-menu-appbar"
         open={Boolean(anchorAboutUsEl)}

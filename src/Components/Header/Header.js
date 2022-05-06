@@ -1,14 +1,30 @@
-import { AppBar, Container, Toolbar } from "@mui/material";
-import UserActions from "./UserActions";
-import Navigation from "./Navigation";
+import {
+  AppBar,
+  Container,
+  Toolbar,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import DesktopViewHeader from "./DesktopHeader/DesktopViewHeader";
+import MobileViewHeader from "./MobileHeader/MobileViewHeader";
 
 const Header = () => {
+  const theme = useTheme();
+  const matchesDesktop = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
     <AppBar>
       <Container maxWidth="lg">
-        <Toolbar disableGutters sx={{ padding: 3 }}>
-          <Navigation />
-          <UserActions />
+        <Toolbar
+          disableGutters
+          sx={{
+            padding: { md: 3, xs: 1 },
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          {matchesDesktop && <DesktopViewHeader />}
+          {!matchesDesktop && <MobileViewHeader />}
         </Toolbar>
       </Container>
     </AppBar>

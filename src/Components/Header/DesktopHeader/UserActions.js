@@ -15,35 +15,37 @@ const UserActions = () => {
   };
 
   return (
-    <Box
-      sx={{
-        mr: "auto",
-        display: "flex",
-        alignItems: "center",
-        fontSize: 50,
-      }}
-    >
-      <IconButton color="white">
-        <SearchIcon fontSize="large" sx={{ fontSize: 22 }} />
-      </IconButton>
-      <IconButton color="white">
-        <LocalMallIcon fontSize="large" sx={{ fontSize: 22 }} />
-      </IconButton>
-      <Button
-        color="white"
-        sx={{ fontSize: 18 }}
-        onClick={handelOpenProfileMenu}
-        size="large"
-        endIcon={
-          anchorProfileEl ? (
-            <ArrowDropUpOutlinedIcon sx={{ marginRight: 1 }} />
-          ) : (
-            <ArrowDropDownOutlinedIcon sx={{ marginRight: 1 }} />
-          )
-        }
+    <>
+      <Box
+        sx={{
+          mr: "auto",
+          display: "flex",
+          alignItems: "center",
+          fontSize: 50,
+        }}
       >
-        حساب کاربری
-      </Button>
+        <IconButton color="white">
+          <SearchIcon fontSize="large" sx={{ fontSize: 22 }} />
+        </IconButton>
+        <IconButton color="white">
+          <LocalMallIcon fontSize="large" sx={{ fontSize: 22 }} />
+        </IconButton>
+        <Button
+          color="white"
+          sx={{ fontSize: 18 }}
+          onClick={handelOpenProfileMenu}
+          size="large"
+          endIcon={
+            anchorProfileEl ? (
+              <ArrowDropUpOutlinedIcon sx={{ marginRight: 1 }} />
+            ) : (
+              <ArrowDropDownOutlinedIcon sx={{ marginRight: 1 }} />
+            )
+          }
+        >
+          حساب کاربری
+        </Button>
+      </Box>
       <Menu
         id="profile-menu-appbar"
         open={Boolean(anchorProfileEl)}
@@ -58,7 +60,7 @@ const UserActions = () => {
         <MenuItem>سفارشات</MenuItem>
         <MenuItem>خروج</MenuItem>
       </Menu>
-    </Box>
+    </>
   );
 };
 
