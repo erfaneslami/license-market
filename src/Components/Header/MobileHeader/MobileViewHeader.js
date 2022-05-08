@@ -79,12 +79,9 @@ const MobileViewHeader = () => {
             id="input-search"
             placeholder="نام محصول یا دسته"
             fullWidth
-            size="10rem"
             type="text"
             sx={{
-              fontSize: "1.8rem",
               p: 4,
-              color: "red",
             }}
             color="white"
             InputProps={{
@@ -115,14 +112,16 @@ const MobileViewHeader = () => {
           >
             {MenuList.map((item) => {
               return (
-                <>
+                <li key={item}>
                   <ListItemButton>
                     <ListItemText>
-                      <Typography variant="mobileMenuList">{item}</Typography>
+                      <Typography variant="mobileMenuList" key={item}>
+                        {item}
+                      </Typography>
                     </ListItemText>
                   </ListItemButton>
                   <Divider variant="middle" />
-                </>
+                </li>
               );
             })}
           </List>
