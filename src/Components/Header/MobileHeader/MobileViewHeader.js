@@ -1,5 +1,6 @@
 import {
   Box,
+  Collapse,
   Divider,
   IconButton,
   InputAdornment,
@@ -16,9 +17,11 @@ import logo from "../../../Assets/logo.png";
 import Classes from "./MobileViewHeader.module.scss";
 import SearchIcon from "@mui/icons-material/Search";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
+import { ExpandLess, ExpandMore } from "@mui/icons-material";
 
 const MobileViewHeader = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [isAboutUsOpen, setIsAboutUsOpen] = useState(false);
   const burgerClass = `${Classes.menuIcon} ${isOpenMenu && Classes.active}`;
   const theme = useTheme();
   const toggleMenu = () => {
@@ -50,6 +53,10 @@ const MobileViewHeader = () => {
       title: "خروج",
     },
   ];
+
+  const handleOpenNestedMenu = () => {
+    setIsAboutUsOpen((preState) => !preState);
+  };
 
   return (
     <>
@@ -132,16 +139,61 @@ const MobileViewHeader = () => {
           <List>
             {MenuList.map((item) => {
               return (
-                <li key={item}>
-                  <ListItemButton
-                    sx={{ textAlign: "right", color: theme.palette.white.main }}
-                  >
-                    <ListItemText>
-                      <Typography variant="mobileMenuList" key={item.title}>
-                        {item.title}
-                      </Typography>
-                    </ListItemText>
-                  </ListItemButton>
+                <li key={item.title}>
+                  {item.nestedTitles ? (
+                    <>
+                      <ListItemButton
+                        onClick={handleOpenNestedMenu}
+                        sx={{
+                          textAlign: "right",
+                          color: theme.palette.white.main,
+                        }}
+                      >
+                        <ListItemText>
+                          <Typography variant="mobileMenuList">
+                            {item.title}
+                          </Typography>
+                        </ListItemText>
+                        {isAboutUsOpen ? <ExpandLess /> : <ExpandMore />}
+                      </ListItemButton>
+                      <Collapse in={isAboutUsOpen}>
+                        <List>
+                          {item.nestedTitles.map((nestedTitle) => {
+                            return (
+                              <ListItemButton
+                                key={nestedTitle}
+                                component="li"
+                                sx={{
+                                  textAlign: "right",
+                                  color: theme.palette.white.main,
+                                  pr: 4,
+                                }}
+                              >
+                                <ListItemText>
+                                  <Typography variant="mobileMenuList">
+                                    {nestedTitle}
+                                  </Typography>
+                                </ListItemText>
+                              </ListItemButton>
+                            );
+                          })}
+                        </List>
+                      </Collapse>
+                    </>
+                  ) : (
+                    <ListItemButton
+                      sx={{
+                        textAlign: "right",
+                        color: theme.palette.white.main,
+                      }}
+                    >
+                      <ListItemText>
+                        <Typography variant="mobileMenuList">
+                          {item.title}
+                        </Typography>
+                      </ListItemText>
+                    </ListItemButton>
+                  )}
                   <Divider variant="middle" />
                 </li>
               );
