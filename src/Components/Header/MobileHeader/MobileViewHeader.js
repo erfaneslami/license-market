@@ -85,35 +85,33 @@ const MobileViewHeader = () => {
             }}
             color="white"
             InputProps={{
+              style: {
+                fontSize: "1.8rem",
+                color: `${theme.palette.white.main}`,
+              },
               className: Classes.textInput,
 
               startAdornment: (
                 <InputAdornment
                   position="start"
                   sx={{
-                    pl: 0.5,
+                    pl: 1,
                   }}
                 >
-                  <SearchIcon color="white" />
+                  <SearchIcon fontSize="large" color="white" />
                 </InputAdornment>
               ),
             }}
             variant="standard"
           />
           <Divider sx={{ backgroundColor: theme.palette.white.main }} />
-          <List
-            sx={(theme) => ({
-              "& *": {
-                textAlign: "right",
-                color: theme.palette.white.main,
-                fontSize: "1.8rem",
-              },
-            })}
-          >
+          <List>
             {MenuList.map((item) => {
               return (
                 <li key={item}>
-                  <ListItemButton>
+                  <ListItemButton
+                    sx={{ textAlign: "right", color: theme.palette.white.main }}
+                  >
                     <ListItemText>
                       <Typography variant="mobileMenuList" key={item}>
                         {item}
