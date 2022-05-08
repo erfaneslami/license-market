@@ -61,6 +61,7 @@ const MenuDrawer = (props) => {
           backgroundColor: theme.palette.primary.main,
         }}
       >
+        {/*  ................ SEARCH INPUT */}
         <TextField
           id="input-search"
           placeholder="نام محصول یا دسته"
@@ -76,7 +77,6 @@ const MenuDrawer = (props) => {
               color: `${theme.palette.white.main}`,
               padding: 10,
             },
-            // className: Classes.textInput,
 
             startAdornment: (
               <InputAdornment
@@ -92,11 +92,13 @@ const MenuDrawer = (props) => {
           variant="standard"
         />
         <Divider sx={{ backgroundColor: theme.palette.white.main }} />
+        {/* ................ MENU LIST */}
         <List>
           {MenuList.map((item) => {
             return (
               <li key={item.title}>
                 {item.nestedTitles ? (
+                  // ................ MENU WITH NESTED MENU
                   <>
                     <ListItemButton
                       onClick={handleOpenNestedMenu}
@@ -137,6 +139,7 @@ const MenuDrawer = (props) => {
                     </Collapse>
                   </>
                 ) : (
+                  // ................ MENU WITHOUT NESTED MENU
                   <ListItemButton
                     sx={{
                       textAlign: "right",
