@@ -5,6 +5,7 @@
   align-items: center;
   cursor: pointer;
 
+  z-index: 9999;
   div {
     width: 100%;
     position: relative;
@@ -35,4 +36,8 @@
       top: 0;
     }
   }
+}
+
+.textInput {
+  color: #edf2f4;
 }
