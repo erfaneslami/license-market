@@ -8,6 +8,7 @@ import {
   ListItemText,
   SwipeableDrawer,
   TextField,
+  Typography,
   useTheme,
 } from "@mui/material";
 import { useState } from "react";
@@ -23,6 +24,8 @@ const MobileViewHeader = () => {
   const toggleMenu = () => {
     setIsOpenMenu((preState) => !preState);
   };
+
+  const MenuList = ["خانه", "حساب کاربری", "خدمات ما", "درباره ما", "خروج"];
 
   return (
     <>
@@ -103,40 +106,25 @@ const MobileViewHeader = () => {
           <Divider sx={{ backgroundColor: theme.palette.white.main }} />
           <List
             sx={(theme) => ({
-              "*": {
+              "& *": {
                 textAlign: "right",
                 color: theme.palette.white.main,
                 fontSize: "1.8rem",
               },
             })}
-            // sx={{ fontSize: "5rem", color: "white" }}
           >
-            <ListItemButton sx={{ fontSize: "5rem", color: "white" }}>
-              <ListItemText
-                sx={{ fontSize: "5rem", color: "white" }}
-                primary="خانه"
-              />
-            </ListItemButton>
-            <Divider variant="middle" />
-
-            <ListItemButton alignItems="flex-start">
-              <ListItemText primary="حساب کاربری" />
-            </ListItemButton>
-            <Divider variant="middle" />
-
-            <ListItemButton alignItems="flex-start">
-              <ListItemText primary="خدمات ما" />
-            </ListItemButton>
-            <Divider variant="middle" />
-
-            <ListItemButton alignItems="flex-start">
-              <ListItemText primary="درباره ما" />
-            </ListItemButton>
-            <Divider variant="middle" />
-
-            <ListItemButton alignItems="flex-start">
-              <ListItemText primary="خروج" />
-            </ListItemButton>
+            {MenuList.map((item) => {
+              return (
+                <>
+                  <ListItemButton>
+                    <ListItemText>
+                      <Typography variant="mobileMenuList">{item}</Typography>
+                    </ListItemText>
+                  </ListItemButton>
+                  <Divider variant="middle" />
+                </>
+              );
+            })}
           </List>
         </Box>
       </SwipeableDrawer>

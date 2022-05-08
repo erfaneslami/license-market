@@ -28,6 +28,9 @@ const Theme = createTheme({
   },
   typography: {
     fontFamily: IranSansWeb,
+    mobileMenuList: {
+      fontSize: "1.8rem",
+    },
   },
   tabs: {
     fontSize: "1.8rem",
