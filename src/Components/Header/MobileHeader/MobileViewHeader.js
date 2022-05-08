@@ -25,7 +25,31 @@ const MobileViewHeader = () => {
     setIsOpenMenu((preState) => !preState);
   };
 
-  const MenuList = ["خانه", "حساب کاربری", "خدمات ما", "درباره ما", "خروج"];
+  // const MenuList = ["خانه", "حساب کاربری", "خدمات ما", "درباره ما", "خروج"];
+  const MenuList = [
+    {
+      title: "خانه",
+    },
+    {
+      title: "حساب کاربری",
+    },
+    {
+      title: "خدمات ما",
+    },
+    {
+      title: "درباره ما",
+      nestedTitles: [
+        "درباره لایسنس مارکت",
+        "نظرسنجی و بهبود خدمات",
+        "قوانین",
+        "ارتباط با ما",
+        "همکاری با ما",
+      ],
+    },
+    {
+      title: "خروج",
+    },
+  ];
 
   return (
     <>
@@ -113,8 +137,8 @@ const MobileViewHeader = () => {
                     sx={{ textAlign: "right", color: theme.palette.white.main }}
                   >
                     <ListItemText>
-                      <Typography variant="mobileMenuList" key={item}>
-                        {item}
+                      <Typography variant="mobileMenuList" key={item.title}>
+                        {item.title}
                       </Typography>
                     </ListItemText>
                   </ListItemButton>
