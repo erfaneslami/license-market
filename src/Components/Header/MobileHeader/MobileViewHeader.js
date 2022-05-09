@@ -26,12 +26,12 @@ const MobileViewHeader = () => {
           width: "100%",
         }}
       >
-        <Box sx={{ zIndex: 5000 }} className={burgerClass} onClick={toggleMenu}>
+        <div className={burgerClass} onClick={toggleMenu}>
           <div>
             <span className={Classes.lineOne}></span>
             <span className={Classes.lineTow}></span>
           </div>
-        </Box>
+        </div>
 
         <Box
           sx={{
