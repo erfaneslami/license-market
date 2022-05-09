@@ -13,7 +13,7 @@ const Header = () => {
   const matchesDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
-    <AppBar>
+    <AppBar sx={{ zIndex: { xs: 9999, md: "auto" } }}>
       <Container maxWidth="lg">
         <Toolbar
           disableGutters

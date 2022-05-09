@@ -59,6 +59,7 @@ const MenuDrawer = (props) => {
       <Box
         sx={{
           backgroundColor: theme.palette.primary.main,
+          paddingTop: 7,
         }}
       >
         {/*  ................ SEARCH INPUT */}
@@ -68,7 +69,7 @@ const MenuDrawer = (props) => {
           fullWidth
           type="text"
           sx={{
-            p: 4,
+            p: 2,
           }}
           color="white"
           InputProps={{
@@ -118,21 +119,24 @@ const MenuDrawer = (props) => {
                       <List>
                         {item.nestedTitles.map((nestedTitle) => {
                           return (
-                            <ListItemButton
-                              key={nestedTitle}
-                              component="li"
-                              sx={{
-                                textAlign: "right",
-                                color: theme.palette.white.main,
-                                pr: 4,
-                              }}
-                            >
-                              <ListItemText>
-                                <Typography variant="mobileMenuList">
-                                  {nestedTitle}
-                                </Typography>
-                              </ListItemText>
-                            </ListItemButton>
+                            <>
+                              <ListItemButton
+                                key={nestedTitle}
+                                component="li"
+                                sx={{
+                                  textAlign: "right",
+                                  color: theme.palette.white.main,
+                                  pr: 4,
+                                }}
+                              >
+                                <ListItemText>
+                                  <Typography variant="mobileMenuList">
+                                    {nestedTitle}
+                                  </Typography>
+                                </ListItemText>
+                              </ListItemButton>
+                              <Divider variant="middle" />
+                            </>
                           );
                         })}
                       </List>
