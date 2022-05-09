@@ -35,8 +35,8 @@ const MobileViewHeader = () => {
 
         <Box
           sx={{
-            height: "3rem",
-            width: "auto",
+            height: "auto",
+            width: "3rem",
           }}
         >
           <img
