@@ -119,10 +119,8 @@ const MenuDrawer = (props) => {
                       <List>
                         {item.nestedTitles.map((nestedTitle) => {
                           return (
-                            <>
+                            <li key={nestedTitle}>
                               <ListItemButton
-                                key={nestedTitle}
-                                component="li"
                                 sx={{
                                   textAlign: "right",
                                   color: theme.palette.white.main,
@@ -136,7 +134,7 @@ const MenuDrawer = (props) => {
                                 </ListItemText>
                               </ListItemButton>
                               <Divider variant="middle" />
-                            </>
+                            </li>
                           );
                         })}
                       </List>
