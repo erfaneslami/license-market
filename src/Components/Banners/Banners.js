@@ -28,7 +28,7 @@ const Banners = () => {
           sx={{
             textAlign: "center",
             height: "100%",
-            // backgroundColor: "#9ff0ff",
+            backgroundColor: "#c2d5ff",
           }}
         >
           <CardActionArea sx={{ height: "100%" }}>
@@ -51,7 +51,7 @@ const Banners = () => {
           sx={{
             textAlign: "center",
             height: "100%",
-            // backgroundColor: "#9ff0ff",
+            backgroundColor: "#ffccd5",
           }}
         >
           <CardActionArea
@@ -81,7 +81,7 @@ const Banners = () => {
           sx={{
             height: "60rem",
             textAlign: "center",
-            backgroundColor: "#9ff0ff",
+            backgroundColor: "#e2eafc ",
           }}
         >
           <CardActionArea sx={{ height: "100%" }}>
@@ -105,7 +105,7 @@ const Banners = () => {
           sx={{
             textAlign: "center",
             height: "100%",
-            // backgroundColor: "#9ff0ff",
+            backgroundColor: "#c9e4d8",
           }}
         >
           <CardActionArea
@@ -135,7 +135,7 @@ const Banners = () => {
           sx={{
             textAlign: "center",
             height: "100%",
-            // backgroundColor: "#9ff0ff",
+            backgroundColor: "#fae0e4",
           }}
         >
           <CardActionArea sx={{ height: "100%" }}>
