@@ -38,8 +38,10 @@ const Banners = () => {
               sx={{ width: "17rem", mx: "auto" }}
             />
             <CardContent>
-              <Typography> اشتراک سرویس های فیلم و سریال</Typography>
-              <Typography> DISNEY+ </Typography>
+              <Typography variant="subtitle1">
+                اشتراک سرویس های فیلم و سریال
+              </Typography>
+              <Typography variant="h2"> DISNEY+ </Typography>
             </CardContent>
           </CardActionArea>
         </Card>
@@ -59,10 +61,12 @@ const Banners = () => {
               justifyContent: "space-around",
             }}
           >
-            <CardContent>
-              <Typography> تخفیف ویژه</Typography>
-              <Typography>اکانت پریمیوم سرویس NETFLIX </Typography>
-              <Button size="large">مشاهده و خرید</Button>
+            <CardContent sx={{ textAlign: "right" }}>
+              <Typography variant="subtitle1"> تخفیف ویژه</Typography>
+              <Typography variant="h2">اکانت پریمیوم سرویس NETFLIX </Typography>
+              <Button variant="cta" size="large">
+                مشاهده و خرید
+              </Button>
             </CardContent>
             <CardMedia
               component="img"
@@ -75,24 +79,24 @@ const Banners = () => {
       <Box gridColumn="10/13" gridRow="1/-1">
         <Card
           sx={{
-            maxWidth: "100%",
             height: "60rem",
             textAlign: "center",
             backgroundColor: "#9ff0ff",
           }}
-          centered
         >
           <CardActionArea sx={{ height: "100%" }}>
             <CardContent>
-              <Typography>کارت اعتباری ارزی</Typography>
-              <Typography>VISA</Typography>
+              <Typography variant="subtitle1">کارت اعتباری ارزی</Typography>
+              <Typography variant="h2">VISA</Typography>
             </CardContent>
             <CardMedia
               component="img"
               image={VISA}
               sx={{ width: "17rem", mx: "auto" }}
             />
-            <Button size="large">مشاهده و خرید</Button>
+            <Button variant="cta" size="large">
+              مشاهده و خرید
+            </Button>
           </CardActionArea>
         </Card>
       </Box>
@@ -112,9 +116,11 @@ const Banners = () => {
             }}
           >
             <CardContent>
-              <Typography> تخفیف ویژه</Typography>
-              <Typography> پریمیوم سازی اکانت Spotify</Typography>
-              <Button size="large">مشاهده و خرید</Button>
+              <Typography variant="subtitle1"> تخفیف ویژه</Typography>
+              <Typography variant="h2"> پریمیوم سازی اکانت Spotify</Typography>
+              <Button variant="cta" size="large">
+                مشاهده و خرید
+              </Button>
             </CardContent>
             <CardMedia
               component="img"
@@ -139,8 +145,8 @@ const Banners = () => {
               sx={{ width: "17rem", mx: "auto" }}
             />
             <CardContent>
-              <Typography> Apple Music </Typography>
-              <Typography> اشتراک پریمیوم اپل موزیک</Typography>
+              <Typography variant="subtitle1"> Apple Music </Typography>
+              <Typography variant="h2"> اشتراک پریمیوم اپل موزیک</Typography>
             </CardContent>
           </CardActionArea>
         </Card>

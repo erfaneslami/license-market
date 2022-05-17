@@ -31,10 +31,34 @@ const Theme = createTheme({
     mobileMenuList: {
       fontSize: "1.8rem",
     },
+    h2: {
+      fontSize: "2rem",
+    },
+    subtitle1: {
+      fontSize: "1.7rem",
+      color: "#8d99ae",
+    },
   },
   tabs: {
     fontSize: "1.8rem",
     m: 2,
+  },
+  components: {
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: "cta" },
+          style: {
+            borderRadius: 50,
+            backgroundColor: "#fff",
+            fontSize: " 1.4rem ",
+            "&:hover": {
+              color: "red",
+            },
+          },
+        },
+      ],
+    },
   },
 });
 
