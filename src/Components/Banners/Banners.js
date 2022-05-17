@@ -1,64 +1,60 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardActionArea,
-  CardContent,
-  CardMedia,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Box } from "@mui/material";
 import VISA from "../../Assets/VISA.png";
+
 const Banners = () => {
   return (
-    <Grid
-      container
-      sx={{ mx: "auto" }}
-      // justifyContent="center"
-      // alignItems="stretch"
+    <Box
+      display="grid"
       maxWidth="lg"
+      px={3}
+      mx="auto"
+      gridTemplateColumns="repeat(12,1fr)"
+      gridTemplateRows="repeat(2,1fr)"
+      gap={2}
     >
-      <Grid container item xs>
-        <Grid item xs="3" sx={{ backgroundColor: "black" }}>
-          1
-        </Grid>
-        <Grid item xs="9" sx={{ backgroundColor: "green" }}>
-          2
-        </Grid>
-        <Grid item xs="9" sx={{ backgroundColor: "brown" }}>
-          3
-        </Grid>
-        <Grid item xs="3" sx={{ backgroundColor: "pink" }}>
-          4
-        </Grid>
-      </Grid>
-      <Grid item xs="3">
-        <Card
-          sx={{
-            maxWidth: "100%",
-            height: "60rem",
-            textAlign: "center",
-            m: 1,
-            backgroundColor: "#98c1d9",
-          }}
-          centered
-        >
-          <CardActionArea sx={{ height: "100%" }}>
-            <CardContent>
-              <Typography>کارت اعتباری ارزی</Typography>
-              <Typography>VISA</Typography>
-            </CardContent>
-            <CardMedia
-              component="img"
-              image={VISA}
-              sx={{ width: "17rem", mx: "auto" }}
-            />
-            <Button size="large">مشاهده و خرید</Button>
-          </CardActionArea>
-        </Card>
-      </Grid>
-    </Grid>
+      <Box gridColumn="1/4" bgcolor="red">
+        1
+      </Box>
+      <Box gridColumn="4/10" bgcolor="blue">
+        2
+      </Box>
+      <Box gridColumn="10/13" gridRow="1/-1" bgcolor="brown">
+        3
+      </Box>
+      <Box gridColumn="1/7" bgcolor="black">
+        4
+      </Box>
+      <Box gridColumn="7/10" bgcolor="pink">
+        5
+      </Box>
+    </Box>
   );
 };
 
 export default Banners;
+
+{
+  /* <Card
+sx={{
+  maxWidth: "100%",
+  height: "60rem",
+  textAlign: "center",
+  m: 1,
+  backgroundColor: "#98c1d9",
+}}
+centered
+>
+<CardActionArea sx={{ height: "100%" }}>
+  <CardContent>
+    <Typography>کارت اعتباری ارزی</Typography>
+    <Typography>VISA</Typography>
+  </CardContent>
+  <CardMedia
+    component="img"
+    image={VISA}
+    sx={{ width: "17rem", mx: "auto" }}
+  />
+  <Button size="large">مشاهده و خرید</Button>
+</CardActionArea>
+</Card> */
+}
