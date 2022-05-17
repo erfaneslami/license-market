@@ -38,7 +38,7 @@ const Banners = () => {
               sx={{ width: "17rem", mx: "auto" }}
             />
             <CardContent>
-              <Typography variant="subtitle1">
+              <Typography variant="subtitle1" mb={2}>
                 اشتراک سرویس های فیلم و سریال
               </Typography>
               <Typography variant="h2"> DISNEY+ </Typography>
@@ -63,7 +63,9 @@ const Banners = () => {
           >
             <CardContent sx={{ textAlign: "right" }}>
               <Typography variant="subtitle1"> تخفیف ویژه</Typography>
-              <Typography variant="h2">اکانت پریمیوم سرویس NETFLIX </Typography>
+              <Typography variant="h2" mb={3}>
+                اکانت پریمیوم سرویس NETFLIX{" "}
+              </Typography>
               <Button variant="cta" size="large">
                 مشاهده و خرید
               </Button>
@@ -84,7 +86,15 @@ const Banners = () => {
             backgroundColor: "#e2eafc ",
           }}
         >
-          <CardActionArea sx={{ height: "100%" }}>
+          <CardActionArea
+            sx={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-around",
+              padding: "5rem 0 ",
+            }}
+          >
             <CardContent>
               <Typography variant="subtitle1">کارت اعتباری ارزی</Typography>
               <Typography variant="h2">VISA</Typography>
@@ -117,7 +127,10 @@ const Banners = () => {
           >
             <CardContent>
               <Typography variant="subtitle1"> تخفیف ویژه</Typography>
-              <Typography variant="h2"> پریمیوم سازی اکانت Spotify</Typography>
+              <Typography variant="h2" mb={3}>
+                {" "}
+                پریمیوم سازی اکانت Spotify
+              </Typography>
               <Button variant="cta" size="large">
                 مشاهده و خرید
               </Button>
@@ -145,7 +158,10 @@ const Banners = () => {
               sx={{ width: "17rem", mx: "auto" }}
             />
             <CardContent>
-              <Typography variant="subtitle1"> Apple Music </Typography>
+              <Typography variant="subtitle1" mb={1}>
+                {" "}
+                Apple Music{" "}
+              </Typography>
               <Typography variant="h2"> اشتراک پریمیوم اپل موزیک</Typography>
             </CardContent>
           </CardActionArea>
