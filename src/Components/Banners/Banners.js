@@ -22,22 +22,25 @@ const Banners = () => {
       px={3}
       mx="auto"
       gridTemplateColumns="repeat(12,1fr)"
-      gridTemplateRows={{ md: "repeat(2,1fr)", sm: "auto" }}
+      gridTemplateRows={{ md: "repeat(2,1fr)", xs: "auto" }}
       gap={2}
     >
-      <Box gridColumn={{ md: "1/4", sm: "1/7" }}>
+      <Box gridColumn={{ md: "1/4", sm: "1/7", xs: "1 / -1" }}>
         <Card
           sx={{
             textAlign: "center",
             height: "100%",
+            width: "100%",
             backgroundColor: "#c2d5ff",
           }}
         >
-          <CardActionArea sx={{ height: "100%" }}>
+          <CardActionArea
+            sx={{ height: "100%", padding: { sm: "auto", xs: 3 } }}
+          >
             <CardMedia
               component="img"
               image={DISNEY}
-              sx={{ width: "17rem", mx: "auto" }}
+              sx={{ maxWidth: "17rem", mx: "auto" }}
             />
             <CardContent>
               <Typography variant="subtitle1" mb={2}>
@@ -48,7 +51,7 @@ const Banners = () => {
           </CardActionArea>
         </Card>
       </Box>
-      <Box gridColumn={{ md: "4/10", sm: "7/13" }}>
+      <Box gridColumn={{ md: "4/10", sm: "7/13", xs: " 1 / -1" }}>
         <Card
           sx={{
             textAlign: "center",
@@ -60,10 +63,10 @@ const Banners = () => {
             sx={{
               height: "100%",
               display: "flex",
-              flexDirection: { md: "initial", sm: "column-reverse" },
+              flexDirection: { md: "initial", xs: "column-reverse" },
               alignItems: "center",
               justifyContent: "space-around",
-              padding: { md: "0 2rem", sm: "2rem" },
+              padding: { md: "0 2rem", xs: 3 },
             }}
           >
             <CardContent sx={{ textAlign: { md: "right" } }}>
@@ -78,14 +81,14 @@ const Banners = () => {
             <CardMedia
               component="img"
               image={NETFLIX}
-              sx={{ width: "17rem" }}
+              sx={{ maxWidth: "17rem" }}
             />
           </CardActionArea>
         </Card>
       </Box>
       <Box
-        gridColumn={{ md: "10/13", sm: "1/13" }}
-        gridRow={{ md: "1/-1", sm: "auto" }}
+        gridColumn={{ md: "10/13", sm: "1/13", xs: "1 / -1" }}
+        gridRow={{ md: "1/-1", xs: "auto" }}
       >
         <Card
           sx={{
@@ -100,7 +103,7 @@ const Banners = () => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-around",
-              padding: { md: "5rem 0 " },
+              padding: { md: "5rem 0 ", xs: 3 },
             }}
           >
             <CardContent>
@@ -110,7 +113,7 @@ const Banners = () => {
             <CardMedia
               component="img"
               image={VISA}
-              sx={{ width: "17rem", mx: "auto" }}
+              sx={{ maxWidth: "17rem", mx: "auto" }}
             />
             <Button variant="cta" size="large">
               مشاهده و خرید
@@ -118,7 +121,10 @@ const Banners = () => {
           </CardActionArea>
         </Card>
       </Box>
-      <Box gridColumn={{ sm: "1/7" }} gridRow={{ md: "auto ", sm: "2/3" }}>
+      <Box
+        gridColumn={{ sm: "1/7", xs: " 1 / -1" }}
+        gridRow={{ md: "auto ", sm: "2/3", xs: "auto" }}
+      >
         <Card
           sx={{
             textAlign: "center",
@@ -130,8 +136,8 @@ const Banners = () => {
             sx={{
               height: "100%",
               display: "flex",
-              flexDirection: { md: "initial", sm: "column-reverse" },
-              padding: { md: 0, sm: 2 },
+              flexDirection: { md: "initial", xs: "column-reverse" },
+              padding: { md: 0, xs: 3 },
               justifyContent: "space-around",
             }}
           >
@@ -147,14 +153,14 @@ const Banners = () => {
             <CardMedia
               component="img"
               image={SPOTIFY}
-              sx={{ width: "17rem" }}
+              sx={{ maxWidth: "17rem" }}
             />
           </CardActionArea>
         </Card>
       </Box>
       <Box
-        gridColumn={{ md: "7/10", sm: "7/13" }}
-        gridRow={{ md: "auto ", sm: "2/3" }}
+        gridColumn={{ md: "7/10", sm: "7/13", xs: "1 / -1" }}
+        gridRow={{ md: "auto ", sm: "2/3", xs: "auto" }}
       >
         <Card
           sx={{
@@ -163,16 +169,17 @@ const Banners = () => {
             backgroundColor: "#fae0e4",
           }}
         >
-          <CardActionArea sx={{ height: "100%" }}>
+          <CardActionArea
+            sx={{ height: "100%", padding: { sm: "auto", xs: 3 } }}
+          >
             <CardMedia
               component="img"
               image={APPLE_MUSIC}
-              sx={{ width: "17rem", mx: "auto" }}
+              sx={{ maxWidth: "17rem", mx: "auto" }}
             />
             <CardContent>
               <Typography variant="subtitle1" mb={1}>
-                {" "}
-                Apple Music{" "}
+                Apple Music
               </Typography>
               <Typography variant="h2"> اشتراک پریمیوم اپل موزیک</Typography>
             </CardContent>
