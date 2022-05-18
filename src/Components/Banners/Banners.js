@@ -12,18 +12,20 @@ import NETFLIX from "../../Assets/netflix.png";
 import DISNEY from "../../Assets/disney.png";
 import APPLE_MUSIC from "../../Assets/appleMusic.png";
 import SPOTIFY from "../../Assets/spotify.png";
+
 const Banners = () => {
   return (
     <Box
+      mt={5}
       display="grid"
       maxWidth="lg"
       px={3}
       mx="auto"
       gridTemplateColumns="repeat(12,1fr)"
-      gridTemplateRows="repeat(2,1fr)"
+      gridTemplateRows={{ md: "repeat(2,1fr)", sm: "auto" }}
       gap={2}
     >
-      <Box gridColumn="1/4">
+      <Box gridColumn={{ md: "1/4", sm: "1/7" }}>
         <Card
           sx={{
             textAlign: "center",
@@ -46,7 +48,7 @@ const Banners = () => {
           </CardActionArea>
         </Card>
       </Box>
-      <Box gridColumn="4/10">
+      <Box gridColumn={{ md: "4/10", sm: "7/13" }}>
         <Card
           sx={{
             textAlign: "center",
@@ -58,10 +60,13 @@ const Banners = () => {
             sx={{
               height: "100%",
               display: "flex",
+              flexDirection: { md: "initial", sm: "column-reverse" },
+              alignItems: "center",
               justifyContent: "space-around",
+              padding: { md: "0 2rem", sm: "2rem" },
             }}
           >
-            <CardContent sx={{ textAlign: "right" }}>
+            <CardContent sx={{ textAlign: { md: "right" } }}>
               <Typography variant="subtitle1"> تخفیف ویژه</Typography>
               <Typography variant="h2" mb={3}>
                 اکانت پریمیوم سرویس NETFLIX{" "}
@@ -78,10 +83,13 @@ const Banners = () => {
           </CardActionArea>
         </Card>
       </Box>
-      <Box gridColumn="10/13" gridRow="1/-1">
+      <Box
+        gridColumn={{ md: "10/13", sm: "1/13" }}
+        gridRow={{ md: "1/-1", sm: "auto" }}
+      >
         <Card
           sx={{
-            height: "60rem",
+            height: { md: "60rem", sm: "auto" },
             textAlign: "center",
             backgroundColor: "#e2eafc ",
           }}
@@ -92,7 +100,7 @@ const Banners = () => {
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-around",
-              padding: "5rem 0 ",
+              padding: { md: "5rem 0 " },
             }}
           >
             <CardContent>
@@ -110,7 +118,7 @@ const Banners = () => {
           </CardActionArea>
         </Card>
       </Box>
-      <Box gridColumn="1/7">
+      <Box gridColumn={{ sm: "1/7" }} gridRow={{ md: "auto ", sm: "2/3" }}>
         <Card
           sx={{
             textAlign: "center",
@@ -122,13 +130,14 @@ const Banners = () => {
             sx={{
               height: "100%",
               display: "flex",
+              flexDirection: { md: "initial", sm: "column-reverse" },
+              padding: { md: 0, sm: 2 },
               justifyContent: "space-around",
             }}
           >
             <CardContent>
               <Typography variant="subtitle1"> تخفیف ویژه</Typography>
               <Typography variant="h2" mb={3}>
-                {" "}
                 پریمیوم سازی اکانت Spotify
               </Typography>
               <Button variant="cta" size="large">
@@ -143,7 +152,10 @@ const Banners = () => {
           </CardActionArea>
         </Card>
       </Box>
-      <Box gridColumn="7/10">
+      <Box
+        gridColumn={{ md: "7/10", sm: "7/13" }}
+        gridRow={{ md: "auto ", sm: "2/3" }}
+      >
         <Card
           sx={{
             textAlign: "center",
